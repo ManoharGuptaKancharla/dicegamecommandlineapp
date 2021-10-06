@@ -73,6 +73,11 @@ public class DiceGameImpl implements Game {
                 System.out.println("Player - " + currentPlayerId + ", it's your turn. Press 'r' and hit enter to roll the dice.");
                 String input = scanner.nextLine();
                 //TODO: check if input is 'r' or not.
+                if(!input.trim().equals("r")){
+                    System.out.println("Unknown Key was pressed. Exiting the Game.......!!!");
+                    System.out.println("**********Game is OVER.****************");
+                    return;
+                }
                 int score = -1;
                 do{
                     score = ServiceUtil.generateRandomInteger(6);
